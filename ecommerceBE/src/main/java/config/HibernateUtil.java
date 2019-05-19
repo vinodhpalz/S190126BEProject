@@ -25,11 +25,12 @@ public class HibernateUtil {
 					
 					Map<String, String> settings = new HashMap<String, String>();
 					settings.put(Environment.DRIVER,"org.h2.Driver");
-					settings.put(Environment.URL,"jdbc:h2:tcp://localhost/~/shoppingcart");
+					settings.put(Environment.URL,"jdbc:h2:tcp://localhost/~/shopping");
 					settings.put(Environment.USER, "sa");
-					settings.put(Environment.PASS, "sa@123");
+					settings.put(Environment.PASS, "sa");
 					settings.put(Environment.DIALECT, "org.hibernate.dialect.H2Dialect");
-					settings.put(Environment.HBM2DDL_AUTO,"create");
+					settings.put(Environment.HBM2DDL_AUTO,"update");
+					settings.put(Environment.SHOW_SQL,"true");
 					
 					registryBuilder.applySettings(settings);
 					

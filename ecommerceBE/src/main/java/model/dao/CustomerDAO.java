@@ -27,5 +27,35 @@ public class CustomerDAO {
 		}
 		return b;
 	}
+	public boolean updateCustomer(Customer c) {
+		boolean b = true;
+		try
+		{
+			trans = sess.beginTransaction();
+			sess.update(c);
+			trans.commit();
+		}catch(Exception ex)
+		{
+			trans.rollback();
+			b = false;
+			ex.printStackTrace();
+		}
+		return b;
+	}
+	public boolean deleteCustomer(Customer c) {
+		boolean b = true;
+		try
+		{
+			trans = sess.beginTransaction();
+			sess.delete(c);
+			trans.commit();
+		}catch(Exception ex)
+		{
+			trans.rollback();
+			b = false;
+			ex.printStackTrace();
+		}
+		return b;
+	}
 	
 }

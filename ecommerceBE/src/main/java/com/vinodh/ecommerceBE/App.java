@@ -16,14 +16,14 @@ public class App
     		System.out.println( "Hello World!" );
         
     		Customer c = new Customer();
-    		c.setCustName("vinodh");
-    		c.setCustAge(20);
-    		
+    		c.setCustId(2);
+			//c.setCustAge(20);
+			//c.setCustName("Barath");
     		CustomerDAO cd = new CustomerDAO();
-    		boolean b = cd.insertCustomer(c);
+    		boolean b = cd.deleteCustomer(c);
     		if(b)
     		{
-    			System.out.println("Inserted Successfully");
+    			System.out.println("Deleted Successfully");
     		}
     	}
     	catch(Exception exp)
